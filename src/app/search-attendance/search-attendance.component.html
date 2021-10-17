@@ -1,0 +1,56 @@
+<form [formGroup]="searchForm" class="mt-5">
+    <div class="d-flex mb-5">
+        <h5 class="mr-2 mt-1">Select Date</h5>
+        <input type="date"  formControlName="attendancedate" value={{date}} [(ngModel)]="date" (change)="changeDate()">
+    </div>
+</form>
+    <div>
+        <h5 class="font-weight-bold">Students present on {{date}}</h5>
+    </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Students</h6>
+        </div>
+    
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Semester</th>
+                            
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Semester</th>
+                        </tr>
+                    </tfoot>
+    
+                    <tbody>
+                        <tr *ngFor="let student of presentStudentList let i=index">
+                            
+                            <td>{{student.id}}</td>
+                            <td>{{student.name}}</td>
+                            <td>{{date}}</td>
+                            <td>{{student.email}}</td>
+                            <td>{{student.phoneNumber}}</td>
+                            <td>{{student.semester}}</td>
+                        
+                        </tr>
+                    </tbody>
+    
+                </table>
+            </div>
+        </div>
+    </div>

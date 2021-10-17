@@ -1,0 +1,14 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4 mt-5">
+    <h1 class="h3 mb-0 text-gray-800 ml-4 ">Dashboard</h1>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <app-card title="Total Studens" [count]="totalStudents"></app-card>
+        </div>
+        <div class="col-lg-4">
+            <app-card title="Students Present Today" [count]="present"> </app-card>
+        </div>
+    </div>
+</div>
